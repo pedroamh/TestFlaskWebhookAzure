@@ -10,5 +10,5 @@ def index():
     return "<h1>Esto es una prueba</h1>"
 
 
-if __name__ == '__main__':
-    app.run()
+# if __name__ == '__main__':
+#     app.run()
