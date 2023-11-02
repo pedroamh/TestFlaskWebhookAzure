@@ -1,5 +1,6 @@
 #from fastapi import APIRouter, Request
 from flask import Blueprint, request, Response
+from flask_cors import cross_origin
 from handlers.email_handler import send_notification_email
 from processors.survey_processor import get_feature_attributes,get_survey_info,get_token,get_layer_info,validate_attachment, process_survey1, process_survey2, process_survey3,process_survey4,process_survey5,process_survey6,process_survey7,process_survey8,process_survey9
 from utils.comUtil import consultar_enviar_attachment,cargar_archivo_configuracion
@@ -8,15 +9,17 @@ import time
 
 
 webhook_router = Blueprint("webhook_handler", __name__, url_prefix='/webhook')
+print(__name__)
 
 
 #@webhook_router.post("/notification")
+@cross_origin
 @webhook_router.route('/notification', methods=['POST'])
 async def survey_notification():
     start_time = time.time()
     response = Response()
     response_json = request.json
-    
+    print(response_json)
     # Forzar el cierre de la conexión
     print(f'la respuesta - {response_json}')
     print(f'Se obtiene la respuesta de survey123')
@@ -145,3 +148,4 @@ async def survey_notification():
     total_duration = time.time() - start_time
     print(f'Proceso finalizado - {total_duration}')'''
     print(f'Proceso finalizado')
+    return response.status
