@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Correo de confirmación</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background-color: #0072ce;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .header img {
+            max-width: 200px;
+        }
+
+        .content {
+            margin-top: 20px;
+        }
+
+        .message {
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .footer {
+            background-color: #f2f2f2;
+            padding: 10px;
+            text-align: center;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="igac_banner.jpg" alt="IGAC">
+        </div>
+        <div class="content">
+            <p class="message">{{ nombre_entidad }} ha registrado los productos {{ productos_registro }} por favor, realizar la validación correspondiente para cada producto entregado.</p>
+            <p class="message">
+                <ul>
+                    {% for producto in productos_registro.split(',') %}
+                    <li>
+                        {% if producto == "MDT" %}
+                        <strong>Modelo de elevación digital</strong>
+                        <p>Ingrese al siguiente: <a href="{{ MDT }}"> link</a></p>
+
+                        {% elif producto == "Orto" %}
+                        <strong>Ortoimágenes</strong>
+                        <p>Ingrese al siguiente <a href="{{ Orto }}"> link</a></p>
+                        
+                        {% else %}
+                        <strong>Cartografia</strong>
+                        <p>Ingrese al siguiente <a href="{{ Carto }}"> link</a></p>
+                          
+                        {% endif %}
+                    </li>
+                    {% endfor %}
+                </ul>
+            </p>
+        </div>
+        <div class="footer">
+            Este es un mensaje automático. Por favor, no responda a este correo electrónico.
+        </div>
+    </div>
+</body>
+</html>

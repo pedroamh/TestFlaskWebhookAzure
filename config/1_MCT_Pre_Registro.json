@@ -1,0 +1,38 @@
+{
+  "fields_mapping": {
+      "nombre_entidad": "nombre_entidad",
+      "tipo_endidad": "tipo_endidad",
+      "productos_solicitud": "productos_solicitud",
+      "nombre_proyecto": "nombre_proyecto",
+      "correo": "correo",
+      "globalId": "globalid",
+      "id_solicitud":"id_solicitud"
+      },
+      "email":"notificacionesarcgis@igac.gov.co",
+      "subject": {
+        "IGAC": "Asunto para IGAC",
+        "entidad": "Asunto para entidad"
+      },
+      "email_parameters":{
+        "IGAC": {
+          "nombre_entidad": "{{ nombre_entidad }}",
+          "tipo_endidad": "{{ tipo_endidad }}",
+          "productos_solicitud": "{{ productos_solicitud }}",
+          "nombre_proyecto": "{{ nombre_proyecto }}"
+        },
+        "entidad": {
+          "nombre_entidad": "{{ nombre_entidad }}",
+          "tipo_endidad": "{{ tipo_endidad }}",
+          "productos_solicitud": "{{ productos_solicitud }}",
+          "correo": "{{ correo }}",
+          "nombre_proyecto": "{{ nombre_proyecto }}",
+          "id_solicitud": "{{ id_solicitud }}"
+
+        }
+      },
+      "receiver": ["IGAC", "entidad"],
+      "base_url": { 
+        "base_url":"https://survey123.arcgis.com/share/19801a7e77584e188dab5e280b827ac8"
+      }
+
+  }

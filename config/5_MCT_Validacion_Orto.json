@@ -1,0 +1,51 @@
+{
+  "fields_mapping": {
+      "id_solicitud":"id_solicitud",
+      "proveedor":"proveedor",
+      "proyecto_contrato":"proyecto_contrato",
+      "correo_solicitante":"correo_solicitante",
+      "n_inspeccion":"n_inspeccion",
+      "resul_validacion":"resul_validacion",
+      "tipo_producto_chequeo": "tipo_producto_chequeo",
+      "tot_omision_confor":"tot_omision_confor",
+      "exa_pos_abs_confor":"exa_pos_abs_confor",
+      "con_logica_con_empal_confor":"con_logica_con_empal_confor",
+      "con_logica_con_val_dis_geom":"con_logica_con_val_dis_geom",
+      "con_logica_con_des_rad":"con_logica_con_des_rad",
+      "for_ent_desp_confor":"for_ent_desp_confor",
+      "sis_ref_hor_confor":"sis_ref_hor_confor",
+      "sis_ref_ver_confor":"sis_ref_ver_confor",
+      "obs_cons_temp_confor":"obs_cons_temp_confor",
+      "obs_generales":"obs_generales",
+      "ajustes_menores":"ajustes_menores",
+      "obs_ajus_men":"obs_ajus_men"
+      },
+      "subject": {
+        "entidad": "Notificacion resultado validacion Orto entidad"
+      },
+      "email_parameters":{
+        "entidad": {
+          "proveedor":"{{ proveedor }}",
+          "proyecto_contrato":"{{ proyecto_contrato }}",
+          "correo_solicitante":"{{ correo_solicitante }}",
+          "n_inspeccion":"{{ n_inspeccion }}",
+          "tot_omision_confor":"{{ tot_omision_confor }}",
+          "exa_pos_abs_confor":"{{ exa_pos_abs_confor }}",
+          "con_logica_con_empal_confor":"{{ con_logica_con_empal_confor }}",
+          "con_logica_con_val_dis_geom":"{{ con_logica_con_val_dis_geom }}",
+          "con_logica_con_des_rad":"{{ con_logica_con_des_rad }}",
+          "for_ent_desp_confor":"{{ for_ent_desp_confor }}",
+          "sis_ref_hor_confor":"{{ sis_ref_hor_confor }}",
+          "sis_ref_ver_confor":"{{ sis_ref_ver_confor }}",
+          "obs_cons_temp_confor":"{{ obs_cons_temp_confor }}",
+          "obs_generales":"{{ obs_generales }}",
+          "ajustes_menores":" {{ ajustes_menores }}",
+          "obs_ajus_men": " {{ obs_ajus_men }}"
+        }
+      },
+      "receiver": ["entidad"],
+      "base_url": { 
+        "url_chequeo":"https://survey123.arcgis.com/share/9804110a3fbd42e798a360aa4a19eef4",
+        "url_nuevo_proceso":"https://survey123.arcgis.com/share/4e2a46abe7e74c0982db2bd6327dd8e2?portalUrl=https://mapas.igac.gov.co/portal&hide=header,description,footer,navbar&locale=es&width=1200"
+    }
+  }

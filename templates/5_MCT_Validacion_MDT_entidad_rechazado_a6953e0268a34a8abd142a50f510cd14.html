@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Correo de confirmación</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background-color: #0072ce;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .header img {
+            max-width: 200px;
+        }
+
+        .content {
+            margin-top: 20px;
+        }
+
+        .message {
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .footer {
+            background-color: #f2f2f2;
+            padding: 10px;
+            text-align: center;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="igac_banner.jpg" alt="IGAC">
+        </div>
+        <div class="content">
+        {% if ajustes_menores == "si" %}
+            <p class="message">Sr(es) {{ proveedor }} el presente correo es para notificar que el producto {{ proyecto_contrato }} no surtió exitósamente el proceso de validación debido a cambios menores.</p>
+            <p class="message">A continuación se datalla el resultado obtenido.</p>
+        
+        {% else %}
+            <p class="message">Sr(es) {{ proveedor }} el presente correo es para notificar que el producto {{ proyecto_contrato }} no surtió exitósamente el proceso de validación.</p>
+            <p class="message">A continuación se datalla el resultado obtenido.</p>
+          
+        {% endif %}
+            <ol>
+                <p><strong>Totalidad</strong></p>
+                <li>Omisión:
+                    <p><strong>{{ tot_omision_confor }}</strong></p>
+                </li>
+                <p><strong>Exactitud en posición</strong></p>
+                <li>Absoluta:
+                    <p><strong> {{ exa_pos_abs_confor }}</strong></p>
+                </li>
+                <p><strong>Consistencia lógica - conceptual</strong></p>
+                <li>Resolución espacial:
+                    <p><strong>{{ con_logica_con_res_esp_confor }}</strong></p>
+                </li>
+                <li>Valores atípicos:
+                    <p><strong>{{ con_logica_con_val_atip_confor }}</strong></p>
+                </li>
+                <li>Detección de vacíos:
+                    <p><strong>{{ con_logica_con_dete_vaci_confor }}</strong></p>
+                </li>
+                <p><strong>Formato</strong></p>
+                <li>Formato de entrega y despliegue:
+                    <p><strong>{{ for_ent_desp_confor }}</strong></p>
+                </li>
+                <p><strong>Sistema de referencia</strong></p>
+                <li>Sistema de referencia horizontal:
+                    <p><strong>{{ sis_ref_hor_confor }}</strong></p>
+                </li>
+                <li>Sistema de referencia vertical:
+                    <p><strong>{{ sis_ref_ver_confor }}</strong></p>
+                </li>
+                <p><strong>Consistencia temporal</strong></p>
+                <li>Consistencia temporal:
+                    <p><strong>{{ obs_cons_temp_confor }}</strong></p>
+                </li>
+                
+            {% if ajustes_menores == "si" %}
+                <p>Observaciones cambios menores:
+                    {{ obs_ajus_men }}
+                </p>
+            {% endif %}
+            
+
+            <p>Observaciones Generales:
+                {{ obs_generales }}
+            </p>
+            </ol>
+            <p>Debido a que se superó el número máximo de inspecciones permitidas para el producto, se deberá radicar nuevamente el producto en el Instituto Geográfico Agustin Codazzi y diligenciar el siguiente <a href="{{ url_nuevo_proceso }}">formulario </a>de registro</p>
+        </div>
+        <div class="footer">
+            Este es un mensaje automático. Por favor, no responda a este correo electrónico.
+        </div>
+    </div>
+</body>
+</html>
+ 

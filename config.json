@@ -1,0 +1,12 @@
+{
+    "mail_server": {
+      "host": "smtp.gmail.com",
+      "port": 587,
+      "username": "igacnotificacionesarcgis@gmail.com",
+      "password": "gqns quua wkus efky",
+      "sender_email": "igacnotificacionesarcgis@gmail.com"
+    },
+    "service": "https://mapas.igac.gov.co/server/rest/services/Hosted/service_714da9690614450995c01cc451c7bf97/FeatureServer"
+  }
+
+

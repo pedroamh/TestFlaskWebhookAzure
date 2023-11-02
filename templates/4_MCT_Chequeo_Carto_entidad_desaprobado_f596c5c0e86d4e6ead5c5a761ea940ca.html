@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Correo de confirmación</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background-color: #0072ce;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .header img {
+            max-width: 200px;
+        }
+
+        .content {
+            margin-top: 20px;
+        }
+
+        .message {
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .footer {
+            background-color: #f2f2f2;
+            padding: 10px;
+            text-align: center;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="igac_banner.jpg" alt="IGAC">
+        </div>
+        <div class="content">
+            <p class="message">Sr(es) {{ nombre_entidad }} el producto {{ tipo_producto_chequeo }} correspondiente al proyecto {{ nombre_proyecto }} no surtió exitosamente el proceso de chequeo inicial. A cotinuación la información detallada:</p>
+            <ol>
+                <li>Despliega y se visualiza correctamente el producto.
+                    <p><strong>{{ pregunta1 }}</strong></p>
+                </li>
+                <li>Base de datos vectorial, en formato XML/RDF/PostGIs + PostgreSQL/GDB. Verificar que cumpla con la estructura actual de la Base de Datos Vectorial.
+                    <p><strong>{{ pregunta2 }}</strong></p>
+                </li>
+                <li>Metadato de la base de datos vectorial de acuerdo a la norma ISO1915/19139, en formato *.XML o *.PDF.
+                    <p><strong>{{ pregunta3 }}</strong></p>
+                </li>
+                <li>Sistema de Referencia en MAGNA-SIRGAS/Origen Nacional.
+                    <p><strong>{{ pregunta4 }}</strong></p>
+                </li>
+                <li>Información de restitución aprobada, sólo si se estructuró la base de datos a partir de proceso fotogramétrico, en formato *.DGN.
+                    <p><strong>{{ pregunta5 }}</strong></p>
+                </li>
+                <li>Ortoimagen en formato TIFF (GeoTIFF, sin compresión, TILED 512).
+                    <p><strong>{{ pregunta6 }}</strong></p>
+                </li>
+                <li>Metadatos ortoimagen de acuerdo a la norma ISO1915/19139, en formato *.XML o *.PDF.
+                    <p><strong>{{ pregunta7 }}</strong></p>
+                </li>
+                <li>Modelo Digital de Terreno: el pixel debe ser entero con signo, en formato TIFF (GeoTIFF de 32 bits número real de tipo float, sin compresión).
+                    <p><strong>{{ pregunta8 }}</strong></p>
+                </li>
+                <li>Base de datos de compilación toponímica, escaneos, trabajo de campo y demás insumos utilizados para levantamiento de objetos geográficos. En formato XML/RDF/PostGIs + PostgreSQL/GDB.
+                    <p><strong>{{ pregunta9 }}</strong></p>
+                </li>
+                <li>Límite del proyecto a validar: se debe tener en cuenta los elementos importantes del paisaje, de manera que no se corte o elimine alguno. En formato *.SHP o *.KML.
+                    <p><strong>{{ pregunta10 }}</strong></p>
+                </li>
+                <li>Delimitación del área efectiva y de las zonas sin cobertura, presencia de nubes, huecos fotogramétricos o zonas restringidas. En formato *.SHP, *.DXF, *.DGN. Registrar en observaciones si el producto no contiene nubes.
+                    <p><strong>{{ pregunta11 }}</strong></p>
+                </li>
+                <li>Memoria técnica o informe general del proyecto en donde se describa el proceso productivo. *.PDF. (Aplicable para validación de productos generados por terceros).
+                    <p><strong>{{ pregunta12 }}</strong></p>
+                </li>
+                <li>Consistencia temporal. Insumos capturados en un periodo inferior o igual a 3 años y hasta 5 años para zonas de poca dinámica.
+                    <p><strong>{{ pregunta13 }}</strong></p>
+                </li>
+                <li>Delimitación del área efectiva y de las zonas sin cobertura (afectaciones), presencia de nubes, huecos fotogramétricos o zonas restringidas. En formato *.SHP, *.DXF, *.DGN. (Aplicable si en el mosaico se presentan afectaciones). Registrar en observaciones si el producto no contiene nubes.
+                    <p><strong>{{ pregunta14 }}</strong></p>
+                </li>
+                <li>Memoria técnica o informe general del proyecto en donde se describa el proceso productivo en formato *.PDF. (Aplicable para validación de productos generados por terceros).
+                    <p><strong>{{ pregunta15 }}</strong></p>
+                </li>
+                <li>Evidencias y reporte del control de calidad efectuado por el productor, tanto de la base de datos cómo de ortofotos y/o ortoimágenes, en formato *.PDF (para productos generados por terceros) o evidencias de control de calidad de los productos (para productos generados en el IGAC). 
+                    <p><strong>{{ pregunta16 }}</strong></p>
+                </li>
+                <p>Observaciones Generales:
+                    {{ observaciones_grales }}
+                </p>
+                <p>
+                    Una vez realice los ajustes al producto, registrar nuevamente la información para un nuevo proceso de chequeo, para lo cual se solicita diligenciar el siguiente <a href="{{ url_registro_productos }}">link</a> </p>
+            </ol>
+        </div>
+        <div class="footer">
+            Este es un mensaje automático. Por favor, no responda a este correo electrónico.
+        </div>
+    </div>
+</body>
+</html>
+ 

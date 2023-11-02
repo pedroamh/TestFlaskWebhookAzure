@@ -1,0 +1,70 @@
+{
+  "fields_mapping": {
+      "nombre_entidad": "nombre_entidad",
+      "nombre_proyecto": "nombre_proyecto",
+      "id_solicitud_registro":"id_solicitud_registro",
+      "id_registro":"id_registro",
+      "id_chequeo": "id_chequeo",
+      "aprobado":"aprobado",
+      "correo":"correo",
+      "resp_validacion_correo":"resp_validacion_correo",
+      "resp_validacion":"resp_validacion",
+      "tipo_producto_chequeo": "tipo_producto_chequeo",
+      "pregunta1":"pregunta1",
+      "pregunta2":"pregunta2",
+      "pregunta3":"pregunta3",
+      "pregunta4":"pregunta4",
+      "pregunta5":"pregunta5",
+      "pregunta6":"pregunta6",
+      "pregunta7":"pregunta7",
+      "pregunta8":"pregunta8",
+      "pregunta9":"pregunta9",
+      "pregunta10":"pregunta10",
+      "pregunta11":"pregunta11",
+      "pregunta12":"pregunta12",
+      "pregunta13":"pregunta13",
+      "pregunta14":"pregunta14",
+      "pregunta15":"pregunta15",
+      "pregunta16":"pregunta16",
+      "observaciones_grales":"observaciones_grales"
+      },
+      "subject": {
+        "IGAC": "Notificacion resultado chequeo carto IGAC",
+        "entidad": "Notificacion resultado chequeo carto entidad"
+      },
+      "email_parameters":{
+        "IGAC": {
+          "nombre_entidad": "{{ nombre_entidad }}",
+          "resp_validacion": "{{ resp_validacion }}",
+          "tipo_producto_chequeo": "{{ tipo_producto_chequeo }}"
+        },
+        "entidad": {
+          "id_solicitud_registro":"{{ id_solicitud_registro }}",    
+          "nombre_entidad": "{{ nombre_entidad }}",
+          "tipo_producto_chequeo": "{{ tipo_producto_chequeo }}",
+          "nombre_proyecto": "{{ nombre_proyecto }}",
+          "pregunta1":"{{ pregunta1 }}",
+          "pregunta2":"{{ pregunta2 }}",
+          "pregunta3":"{{ pregunta3 }}",
+          "pregunta4":"{{ pregunta4 }}",
+          "pregunta5":"{{ pregunta5 }}",
+          "pregunta6":"{{ pregunta6 }}",
+          "pregunta7":"{{ pregunta7 }}",
+          "pregunta8":"{{ pregunta8 }}",
+          "pregunta9":"{{ pregunta9 }}",
+          "pregunta10":"{{ pregunta10 }}",
+          "pregunta11":"{{ pregunta11 }}",
+          "pregunta12":"{{ pregunta12 }}",
+          "pregunta13":"{{ pregunta13 }}",
+          "pregunta14":"{{ pregunta14 }}",
+          "pregunta15":"{{ pregunta15 }}",
+          "pregunta16":"{{ pregunta16 }}",
+          "observaciones_grales":"{{ observaciones_grales }}"
+        }
+      },
+      "receiver": ["entidad","IGAC"],
+      "base_url": { 
+        "url_registro_productos":"https://survey123.arcgis.com/share/9804110a3fbd42e798a360aa4a19eef4",
+        "url_validacion_producto":"https://survey123.arcgis.com/share/1fa56d293d0b4f9483db26ce4458608e"
+    }
+  }

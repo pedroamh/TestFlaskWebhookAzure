@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Correo de confirmación</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background-color: #0072ce;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .header img {
+            max-width: 200px;
+        }
+
+        .content {
+            margin-top: 20px;
+        }
+
+        .message {
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .footer {
+            background-color: #f2f2f2;
+            padding: 10px;
+            text-align: center;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="igac_banner.jpg" alt="IGAC">
+        </div>
+        <div class="content">
+            {% if ajustes_menores == "si" %}
+                <p class="message">Sr(es) {{ proveedor }} el presente correo es para notificar que el producto {{ proyecto_contrato }} no surtió exitósamente el proceso de validación debido a cambios menores que debe efectuar.</p>
+                <p class="message">A continuación se datalla el resultado obtenido.</p>
+            
+            {% else %}
+                <p class="message">Sr(es) {{ proveedor }} el presente correo es para notificar que el producto {{ proyecto_contrato }} no surtió exitósamente el proceso de validación.</p>
+                <p class="message">A continuación se datalla el resultado obtenido.</p>
+              
+            {% endif %}
+            <ol>
+                <p><strong>Totalidad</strong></p>
+                <li>Omisión (Bosque_Grupo de arboles, Cerca, Matorral, Arboles).
+                    <p><strong>{{ tot_omi_bos_confor }}</strong></p>
+                </li>
+                <li>Omisión (Demás Elementos de la Base de Datos).
+                    <p><strong>{{ tot_omi_dem_elem_confor }}</strong></p>
+                </li>
+                <li>Omisión (Capa de Información que debe estar presente).
+                    <p><strong>{{ tot_omi_cap_inf_confor }}</strong></p>
+                </li>
+                <li>Omisión (Respecto al area del proyecto).
+                    <p><strong>{{ tot_comi_area_proy_confor }}</strong></p>
+                </li>
+                <li>Comisión (Bosque_Grupo de arboles, Cerca, Matorral, Arboles).
+                    <p><strong>{{ tot_comi_bos_confor }}</strong></p>
+                </li>
+                <li>Comisión (Demás Elementos de la Base de Datos).
+                    <p><strong>{{ tot_comi_dem_elem_confor }}</strong></p>
+                </li>
+                <li>Comisión (Capa de Información incorrectamente presente).
+                    <p><strong>{{ tot_comi_cap_inf_confor }}</strong></p>
+                </li>
+            </ol>
+            
+            <ol>
+                <p><strong>Consistencia lógica</strong></p>
+                <li>Conceptual o de formato.
+                    <p><strong>{{ con_logica_con_form }}</strong></p>
+                </li>
+                <li>Topológica.
+                    <p><strong>{{ con_logica_val_topo }}</strong></p>
+                </li>
+                <li>De Dominio.
+                    <p><strong>{{ con_logica_val_dom }}</strong></p>
+                </li>
+            </ol>
+
+            <ol>
+                <p><strong>Exactitud en posición</strong></p>
+                <li>Relativa.
+                    <p><strong>{{ exa_pos_rel_confor }}</strong></p>
+            </ol>
+
+
+            <ol>
+                <p><strong>Exactitud temática</strong></p>
+                <li>Clasificación de elementos.
+                    <p><strong>{{ tot_clas_elemen_confor }}</strong></p>
+                </li>
+                <li>Exactitud atributos cualitativos.
+                    <p><strong>{{ tot_exac_atr_cual_confor }}</strong></p>
+                </li>
+                <li>Exactitud atributos cuantitativos.
+                    <p><strong>{{ tot_exac_atr_cuan_confor }}</strong></p>
+                </li>
+            </ol>
+
+            <ol>
+                <p><strong>Sistema de referencia</strong></p>
+                <li>Sistema de referencia horizontal.
+                    <p><strong>{{ sis_ref_hor_confor }}</strong></p>
+                </li>
+                <li>Sistema de referencia vertical. 
+                    <p><strong>{{ sis_ref_ver_confor }}</strong></p>
+                </li>
+            </ol>
+
+            <ol>
+                <p><strong>Consistencia temporal</strong></p>
+                <li>Consistencia temporal.
+                    <p><strong>{{ obs_cons_temp_confor }}</strong></p>
+                </li>
+            {% if ajustes_menores == "si" %}
+                <p>Observaciones cambios menores:
+                    {{ obs_ajus_men }}
+                </p>
+            {% endif %}
+
+                <p>Observaciones Generales:
+                    {{ obs_generales }}
+                </p>
+            </ol>
+            <p>Una vez realice los ajustes al producto, registrar nuevamente la Información para un nuevo proceso de chequeo y posterior
+                validacion, para lo cual se solicita diligenciar el siguiente <a href="{{ url_chequeo }}">formulario</a></p>
+        </div>
+        <div class="footer">
+            Este es un mensaje automático. Por favor, no responda a este correo electrónico.
+        </div>
+    </div>
+</body>
+</html>
+ 

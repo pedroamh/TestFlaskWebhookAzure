@@ -1,0 +1,26 @@
+{
+  "fields_mapping": {
+      "nombre_entidad": "nombre_entidad",
+      "tipo_endidad": "tipo_endidad",
+      "productos_solicitud": "productos_solicitud",
+      "nombre_proyecto": "nombre_proyecto",
+      "correo": "correo",
+      "globalId": "globalid",
+      "id_solicitud":"id_solicitud",
+      "observaciones":"observaciones"
+      },
+      "subject": {
+        "entidad": "Notificacion pre registro"
+      },
+      "email_parameters":{
+        "entidad": {
+          "nombre_entidad": "{{ nombre_entidad }}",
+          "id_solicitud": "{{ id_solicitud }}",
+          "observaciones": "{{ observaciones }}"
+        }
+      },
+      "receiver": ["entidad"],
+      "base_url": { 
+        "base_url":"https://survey123.arcgis.com/share/fc889d6d836a4c42bd3fc0e2ba631513"
+      }
+  }

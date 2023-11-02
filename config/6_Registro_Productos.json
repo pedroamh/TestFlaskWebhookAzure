@@ -1,0 +1,24 @@
+{
+  "fields_mapping": {
+      "nombre_entidad": "nombre_entidad",
+      "productos_registro":"productos_registro",
+      "id_solicitud_registro":"id_solicitud_registro",
+      "id_registro":"id_registro"
+      },
+      "email":"notificacionesarcgis@igac.gov.co",
+      "subject": {
+        "IGAC": "Notificacion registro productos IGAC"
+      },
+      "email_parameters":{
+        "IGAC": {
+          "nombre_entidad": "{{ nombre_entidad }}",
+          "productos_registro": "{{ productos_registro }}"
+        }
+      },
+      "receiver": ["IGAC"],
+      "base_url": { 
+        "MDT":"https://survey123.arcgis.com/share/e43f427c382145849b7703f24b2a7cbd",
+        "Carto":"https://survey123.arcgis.com/share/f596c5c0e86d4e6ead5c5a761ea940ca",
+        "Orto":"https://survey123.arcgis.com/share/15b5ffccf4e04ab59390aafb7c39a214"
+    }
+  }

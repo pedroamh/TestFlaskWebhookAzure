@@ -1,0 +1,68 @@
+{
+  "fields_mapping": {
+      "id_solicitud":"id_solicitud",
+      "proveedor":"proveedor",
+      "proyecto_contrato":"proyecto_contrato",
+      "correo_solicitante":"correo_solicitante",
+      "n_inspeccion":"n_inspeccion",
+      "resul_validacion":"resul_validacion",
+      "tipo_producto_chequeo": "tipo_producto_chequeo",
+      "tot_omi_bos_confor":"tot_omi_bos_confor",
+      "tot_omi_dem_elem_confor":"tot_omi_dem_elem_confor",
+      "tot_omi_cap_inf_confor":"tot_omi_cap_inf_confor",
+      "tot_comi_area_proy_confor":"tot_comi_area_proy_confor",
+      "tot_comi_bos_confor":"tot_comi_bos_confor",
+      "tot_comi_dem_elem_confor":"tot_comi_dem_elem_confor",
+      "tot_comi_cap_inf_confor":"tot_comi_cap_inf_confor",
+      "con_logica_con_form":"con_logica_con_form",
+      "con_logica_val_topo":"con_logica_val_topo",
+      "con_logica_val_dom":"con_logica_val_dom",
+      "exa_pos_rel_confor":"exa_pos_rel_confor",
+      "tot_clas_elemen_confor":"tot_clas_elemen_confor",
+      "tot_exac_atr_cual_confor":"tot_exac_atr_cual_confor",
+      "tot_exac_atr_cuan_confor":"tot_exac_atr_cuan_confor",
+      "sis_ref_hor_confor":"sis_ref_hor_confor",
+      "sis_ref_ver_confor":"sis_ref_ver_confor",
+      "obs_cons_temp_confor":"obs_cons_temp_confor",
+      "obs_generales":"obs_generales",
+      "ajustes_menores":"ajustes_menores",
+      "obs_ajus_men":"obs_ajus_men"
+      },
+      "subject": {
+        "entidad": "Notificacion resultado validacion Carto entidad"
+      },
+      "email_parameters":{
+        "entidad": {
+          "proveedor":"{{ proveedor }}",
+          "proyecto_contrato":"{{ proyecto_contrato }}",
+          "correo_solicitante":"{{ correo_solicitante }}",
+          "n_inspeccion":"{{ n_inspeccion }}",
+          "tot_omi_bos_confor":"{{ tot_omi_bos_confor }}",
+          "tot_omi_dem_elem_confor":"{{ tot_omi_dem_elem_confor }}",
+          "tot_omi_cap_inf_confor":"{{ tot_omi_cap_inf_confor }}",
+          "tot_comi_area_proy_confor":"{{ tot_comi_area_proy_confor }}",
+          "tot_comi_bos_confor":"{{ tot_comi_bos_confor }}",
+          "tot_comi_dem_elem_confor":"{{ tot_comi_dem_elem_confor }}",
+          "tot_comi_cap_inf_confor":"{{ tot_comi_cap_inf_confor }}",
+          "con_logica_con_form":"{{ con_logica_con_form }}",
+          "con_logica_val_topo":"{{ con_logica_val_topo }}",
+          "con_logica_val_dom":"{{ con_logica_val_dom }}",
+          "exa_pos_rel_confor":"{{ exa_pos_rel_confor }}",
+          "tot_clas_elemen_confor":"{{ tot_clas_elemen_confor }}",
+          "tot_exac_atr_cual_confor":"{{ tot_exac_atr_cual_confor }}",
+          "tot_exac_atr_cuan_confor":"{{ tot_exac_atr_cuan_confor }}",
+          "sis_ref_hor_confor":"{{ sis_ref_hor_confor }}",
+          "sis_ref_ver_confor":"{{ sis_ref_ver_confor }}",
+          "obs_cons_temp_confor":"{{ obs_cons_temp_confor }}",
+          "obs_generales":"{{ obs_generales }}",
+          "ajustes_menores":" {{ ajustes_menores }}",
+          "obs_ajus_men": " {{ obs_ajus_men }}"
+        }
+      },
+      "receiver": ["entidad"],
+      "base_url": { 
+        "url_chequeo":"https://survey123.arcgis.com/share/9804110a3fbd42e798a360aa4a19eef4",
+        "url_nuevo_proceso":"https://survey123.arcgis.com/share/4e2a46abe7e74c0982db2bd6327dd8e2?portalUrl=https://mapas.igac.gov.co/portal&hide=header,description,footer,navbar&locale=es&width=1200"
+
+    }
+  }

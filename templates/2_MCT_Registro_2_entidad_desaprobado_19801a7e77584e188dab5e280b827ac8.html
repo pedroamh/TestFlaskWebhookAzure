@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Correo de confirmación</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background-color: #0072ce;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .header img {
+            max-width: 200px;
+        }
+
+        .content {
+            margin-top: 20px;
+        }
+
+        .message {
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .footer {
+            background-color: #f2f2f2;
+            padding: 10px;
+            text-align: center;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="igac_banner.jpg" alt="IGAC">
+        </div>
+        <div class="content">
+            <p class="message">{{ nombre_entidad }} confirmamos el rechazo de su solicitud para el registro de productos, a continuación se detalla la(s) razon(es) por las cuales no se acepta el registro.</p>
+            <p class="message">{{ observaciones }}</p>
+            <p class="message">Una vez corrija los errores, lo invitamos nuevamente a realizar su solicitud en el siguiente <a href="https://survey123.arcgis.com/share/4e2a46abe7e74c0982db2bd6327dd8e2?portalUrl=https://mapas.igac.gov.co/portal">link</a></p>
+        </div>
+        <div class="footer">
+            Este es un mensaje automático. Por favor, no responda a este correo electrónico.
+        </div>
+    </div>
+</body>
+</html>
