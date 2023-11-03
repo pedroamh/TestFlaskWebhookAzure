@@ -1,6 +1,6 @@
 #from fastapi import APIRouter, Request
 from flask import Blueprint, request, Response
-from flask_cors import cross_origin
+from flask_cors import CORS, cross_origin
 from handlers.email_handler import send_notification_email
 from processors.survey_processor import get_feature_attributes,get_survey_info,get_token,get_layer_info,validate_attachment, process_survey1, process_survey2, process_survey3,process_survey4,process_survey5,process_survey6,process_survey7,process_survey8,process_survey9
 from utils.comUtil import consultar_enviar_attachment,cargar_archivo_configuracion
@@ -9,11 +9,10 @@ import time
 
 
 webhook_router = Blueprint("webhook_handler", __name__, url_prefix='/webhook')
-print(__name__)
+
+CORS(webhook_router)
 
 
-#@webhook_router.post("/notification")
-@cross_origin
 @webhook_router.route('/notification', methods=['POST'])
 async def survey_notification():
     start_time = time.time()
